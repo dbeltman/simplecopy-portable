@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #Set Date and make /tmp backup folder
 date=$(date +%m-%d-%Y_%H-%M)
 mkdir -pv /tmp/backup-$date
