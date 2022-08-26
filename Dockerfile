@@ -1,10 +1,11 @@
 FROM alpine:3.16.2
 
-RUN apk -q add openssh-client rsync
+RUN apk -q add openssh-client rsync && \
+mkdir -pv /opt/scp
+WORKDIR /opt/scp
+COPY entrypoint.sh  entrypoint.sh
 
-COPY entrypoint.sh /bin/entrypoint.sh
+RUN chmod +x  entrypoint.sh && pwd && ls -lah
 
-RUN chmod +x /bin/entrypoint.sh && ls -lah /bin/entrypoint.sh
-
-ENTRYPOINT ["/bin/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
 
