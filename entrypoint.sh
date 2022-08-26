@@ -16,3 +16,4 @@ ssh -o StrictHostKeyChecking=no -i /keys/target.key -p ${TARGET_PORT} ${TARGET_U
 #Transfer .tgz to target
 echo "Transferring backup-$date.tgz to ${TARGET_USERNAME}@${TARGET_HOST}:${TARGET_BACKUP_PATH}/backup-$date.tgz"
 scp -P ${TARGET_PORT} -o StrictHostKeyChecking=no -i /keys/target.key /tmp/backup-$date.tgz ${TARGET_USERNAME}@${TARGET_HOST}:${TARGET_BACKUP_PATH}/backup-$date.tgz
+
