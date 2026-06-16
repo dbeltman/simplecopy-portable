@@ -1,4 +1,4 @@
-FROM alpine:3.17.0
+FROM alpine:3.24.1
 
 RUN apk -q add openssh-client rsync && \
 mkdir -pv /opt/scp
